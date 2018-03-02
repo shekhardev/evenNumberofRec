@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("http://localhost:8080").then(function(response) {
+        $scope.myData = response;
+    });
+});
+</script>
+</head>
+<body>
+
+<h4 th:text="${book}"></h4>
+
+<ul>
+    <li th:each="books :${book}" th:text="${books.id}"></li>
+    <li th:each="books :${book}" th:text="${books.name}"></li>
+</ul>
+<div ng-app="myApp" ng-controller="customersCtrl">
+        {{2+2}}
+    <ul>
+        <li ng-repeat="x in myData">
+            {{ x.name  }}
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

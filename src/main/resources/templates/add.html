@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+    <h1 th:text="${title}">Default Title</h1>
+    <form method="post" th:object="${Book}" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Name of Book:</label>
+        <input type="text" class="form-control" name="name" id="name"/>
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+        <input type="text" name="author" class="form-control" id="author"/>
+        </div>
+        <div class="form-group">
+            <label for="publisher">Publisher:</label>
+        <input type="text" name="publisher" class="form-control" id="publisher"/>
+        </div>
+        <div class="form-group">
+            <label for="file">File:</label>
+        <input type="file" name="content" id="file" />
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+        <input type="text" name="quantity" class="form-control" id="quantity"/>
+        </div>
+        <!--<div class="container">-->
+        <!--<div class="dropdown">-->
+            <!--<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example-->
+                <!--<span class="caret"></span></button>-->
+            <!--<ul class="dropdown-menu">-->
+                <!--<li><a href="#">HTML</a></li>-->
+                <!--<li><a href="#">CSS</a></li>-->
+                <!--<li><a href="#">JavaScript</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label th:for="type">Type</label>-->
+            <!--<select th:field="*{type}"></select>-->
+        <!--</div>-->
+        <input type="submit" class="btn btn-info" value="Add Book"/>
+    </form>
+    </div>
+</body>
+</html>
